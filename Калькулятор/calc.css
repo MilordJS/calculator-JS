@@ -1,0 +1,102 @@
+@font-face { /*подключил шрифт*/
+    font-family: "openSans";
+    src: url("Fonts/OpenSans-VariableFont_wdth\,wght.ttf");
+}
+
+@font-face { /*подключил шрифт*/
+    font-family: "Roboto";
+    src: url("Fonts/OpenSans-VariableFont_wdth\,wght.ttf");
+}
+
+h1 {
+    margin: 50px 0px;
+    font-size: 5rem;
+    font-family: "Roboto"; 
+    text-align: center;
+}
+
+.calc { /* здесь делаю сам калькулятор*/
+    margin: 100px auto;
+    width: 300px;
+    height: 500px;
+    /*border: 1px solid black;*/
+    border-radius: 20px ;
+    background: rgb(228, 228, 228);
+    color: black;
+    font-family: "openSans";
+    padding: 18px; 
+    box-shadow: 4px 4px 4px #4f4f4f;
+   
+}
+    
+
+
+.calc-screen {  /*сделал экран калькулятора*/
+    height: 125px;
+    padding: 18px;
+    display: grid;
+    justify-items: end;
+    align-items:end;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.calc-screen p {/*оформляем ноль*/
+    font-size: 4rem;
+    margin: 0px;
+}
+
+
+.buttons {  /* здесь я ставлю кнопки по сетке*/ 
+    display: grid;
+    grid-template-areas:
+    "ac plus-minus percent division"
+    "seven eight nine multiply"
+    "four five six minus"
+    "one two three plus"
+    "zero zero dot equal";
+    grid-gap: 8px;
+    justify-items: center;
+}
+
+
+.btn{ /*сделал кнопки */
+    width: 60px;
+    height: 60px;
+    background: rgb(78, 78, 78);
+    border-radius: 5%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+.btn.zero {
+    grid-area: zero;
+    width: 95%;
+}
+
+
+.btn:hover { /*когда навожу тогда светлеет*/
+    filter: brightness(120%)
+}
+
+
+.btn:active { /*колда зажимаю- темнеет*/
+    filter: brightness(90%)
+}
+
+
+.btn.bg-orange { /*делить, умножить, минус, плюс, равно - синие*/
+    background: rgb(101, 143, 233);
+}
+
+
+.btn.bg-gray { /*отсистить, смена знака и проценты  - светло серые*/
+    background: rgb(148, 148, 148);
+}
